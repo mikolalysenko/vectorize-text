@@ -22,7 +22,7 @@ console.log("</svg>")
 
 Output:
 
-<img src="https://mikolalysenko.github.io/vectorize-text/hello.svg">
+<img src="https://mikolalysenko.github.io/vectorize-text/example/hello.svg">
 
 # Install
 
