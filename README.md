@@ -26,7 +26,7 @@ graph.edges.forEach(function(c) {
 console.log("</svg>")
 ```
 
-And here is what the resulting SVG looks like:
+Output:
 
 <img src="https://mikolalysenko.github.io/vectorize-text/example/hello.svg">
 
@@ -50,7 +50,7 @@ graph.edges.forEach(function(c) {
 console.log("</svg>")
 ```
 
-And here is the resulting output:
+Output:
 
 <img src="https://mikolalysenko.github.io/vectorize-text/example/hello-polygon.svg">
 
@@ -65,17 +65,19 @@ var vectorizeText = require("vectorize-text")
 var polygons = vectorizeText("Hello world!", { triangle: true })
 
 console.log('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="338"  height="80" >')
-graph.edges.forEach(function(c) {
-  var p0 = graph.positions[c[0]]
-  var p1 = graph.positions[c[1]]
-  console.log('<line x1="' + p0[0] + '" y1="' + p0[1] + 
-    '" x2="' + p1[0] + '" y2="' + p1[1] + 
-    '" stroke-width="1" stroke="black" />')
+complex.cells.forEach(function(c) {
+  for(var j=0; j<3; ++j) {
+    var p0 = complex.positions[c[j]]
+    var p1 = complex.positions[c[(j+1)%3]]
+    console.log('<line x1="' + p0[0] + '" y1="' + p0[1] + 
+      '" x2="' + p1[0] + '" y2="' + p1[1] + 
+      '" stroke-width="1" stroke="black" />')
+  }
 })
 console.log("</svg>")
 ```
 
-And here is the resulting output:
+Output:
 
 <img src="https://mikolalysenko.github.io/vectorize-text/example/hello-triangles.svg">
 
@@ -94,13 +96,22 @@ Renders a string to a 2D cell complex
 * `options` is an optional object of parameters
 
     + `options.font` is the font to use (default: `"normal"`)
-    + `options.triangles` if set, then output a triangulation instead of a planar graph
-    + `options.polygons` if set, output a list of polylines instead of a 
+    + `options.triangles` if set, then output a triangulation
+    + `options.polygons` if set, output a list of polygons
 
-**Returns** A planar graph encoding the vectorized text, represented as an object with two properties.
+**Returns** The returned value depends on the type of geometry
 
-* `cells` are the cells of the complex
-* `positions` are the positions
+* *Planar graph*: This is the fastest output format. A JSON object encoding the embedding of an oriented planar graph, with the following properties:
+
+    + `edges` are the edges of the graph
+    + `positions` are the positions
+
+* *Polygon list*: A list of complex polygons encoded as arrays of positions.  This format is most suitable for SVG and GeoJSON output
+
+* *Triangulation*: This format may be most suitable for WebGL/rendering applications. A 2D oriented simplicial complex encoded as a list of cells and positions, represented by a JSON object with two properties
+
+    + `cells` are the faces of the triangulation, encoded as triples of indices into the vertex array
+    + `positions` are the positions of the vertices in the triangulation
 
 # Credits
 (c) 2014 Mikola Lysenko. MIT License
