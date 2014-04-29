@@ -13,7 +13,10 @@ The default (and fastest) output from the module is a planar graph:
 ```javascript
 var vectorizeText = require("vectorize-text")
 
-var graph = vectorizeText("Hello world! 你好")
+var graph = vectorizeText("Hello world! 你好", {
+  width: 500,
+  textBaseline: "hanging"
+})
 
 var svg = ['<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="500"  height="80" >']
 graph.edges.forEach(function(e) {
@@ -39,7 +42,11 @@ You can also configure the module to emit polygons instead:
 ```javascript
 var vectorizeText = require("vectorize-text")
 
-var polygons = vectorizeText("Hello world! 你好", { polygons: true })
+var polygons = vectorizeText("Hello world! 你好", {
+  polygons: true,
+  width: 500,
+  textBaseline: "hanging"
+})
 
 var svg = []
 svg.push('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="500"  height="80" >')
@@ -73,7 +80,11 @@ Finally, the module can output a triangulation (which is compatible with WebGL f
 ```javascript
 var vectorizeText = require("vectorize-text")
 
-var complex = vectorizeText("Hello world! 你好", { triangles: true })
+var complex = vectorizeText("Hello world! 你好", { 
+  triangles: true,
+  width: 500,
+  textBaseline: "hanging"
+})
 
 var svg = ['<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="500"  height="80" >']
 complex.cells.forEach(function(c) {
@@ -111,6 +122,12 @@ Renders a string to a 2D cell complex
     + `options.font` is the font to use (default: `"normal"`)
     + `options.triangles` if set, then output a triangulation
     + `options.polygons` if set, output a list of polygons
+    + `options.textBaseline` determines the baseline, same semantics as the canvas [textBaseline](https://developer.mozilla.org/en-US/docs/Drawing_text_using_a_canvas#Attributes) property.  Default: `"alphabetic"`
+    + `options.textAlign` determines the alignment for the text, same semantics as canvas [textAlign](https://developer.mozilla.org/en-US/docs/Drawing_text_using_a_canvas#Attributes).  Default: `"start"`
+    + `options.lineHeight` determines the height of a line.  Default: `1.0`
+    + `options.width` determines the width of the text, overrides `lineHeight` if specified
+    + `options.height` determines the height of the text, overrides `lineHeight` if specified
+    + `options.orientation` determines the orientation of any output triangles/polygon curves.  Must be either `"cw"` for clockwise or `"ccw"` for counter clockwise.  Default is `"ccw"`.
 
 **Returns** The returned value depends on the type of geometry
 

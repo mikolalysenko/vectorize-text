@@ -1,6 +1,6 @@
 {
   "name": "vectorize-text",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Render a string to a vectorized cell complex",
   "main": "index.js",
   "directories": {
@@ -10,7 +10,7 @@
     "canvas-browserify": "^1.1.1",
     "ndarray": "^1.0.11",
     "surface-nets": "^1.0.0",
-    "planar-graph-to-polyline": "0.0.1",
+    "planar-graph-to-polyline": "^1.0.0",
     "simplify-planar-graph": "^2.0.1",
     "triangulate-polyline": "^1.0.0"
   },
