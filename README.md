@@ -127,7 +127,7 @@ Renders a string to a 2D cell complex
     + `options.lineHeight` determines the height of a line.  Default: `1.0`
     + `options.width` determines the width of the text, overrides `lineHeight` if specified
     + `options.height` determines the height of the text, overrides `lineHeight` if specified
-    + `options.orientation` determines the orientation of any output triangles/polygon curves.  Must be either `"cw"` for clockwise or `"ccw"` for counter clockwise.  Default is `"ccw"`.
+    + `options.orientation` determines the orientation of any output triangles/polygon curves.  Must be either `"cw"` for clockwise or `"ccw"` for counter clockwise.  Default is `"cw"`.
 
 **Returns** The returned value depends on the type of geometry
 
