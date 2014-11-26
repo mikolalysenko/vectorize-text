@@ -14,7 +14,9 @@
     "simplify-planar-graph": "^2.0.1",
     "triangulate-polyline": "^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tape": "^3.0.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
