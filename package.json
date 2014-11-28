@@ -15,6 +15,9 @@
     "triangulate-polyline": "^1.0.0"
   },
   "devDependencies": {
+    "get-pixels": "^3.1.0",
+    "ndarray-imshow": "^1.0.0",
+    "save-pixels": "^2.2.0",
     "tape": "^3.0.3"
   },
   "scripts": {
