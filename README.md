@@ -22,8 +22,8 @@ var svg = ['<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.o
 graph.edges.forEach(function(e) {
   var p0 = graph.positions[e[0]]
   var p1 = graph.positions[e[1]]
-  svg.push('<line x1="' + p0[0] + '" y1="' + p0[1] + 
-    '" x2="' + p1[0] + '" y2="' + p1[1] + 
+  svg.push('<line x1="' + p0[0] + '" y1="' + p0[1] +
+    '" x2="' + p1[0] + '" y2="' + p1[1] +
     '" stroke-width="1" stroke="black" />')
 })
 svg.push("</svg>")
@@ -80,7 +80,7 @@ Finally, the module can output a triangulation (which is compatible with WebGL f
 ```javascript
 var vectorizeText = require("vectorize-text")
 
-var complex = vectorizeText("Hello world! 你好", { 
+var complex = vectorizeText("Hello world! 你好", {
   triangles: true,
   width: 500,
   textBaseline: "hanging"
@@ -91,8 +91,8 @@ complex.cells.forEach(function(c) {
   for(var j=0; j<3; ++j) {
     var p0 = complex.positions[c[j]]
     var p1 = complex.positions[c[(j+1)%3]]
-    svg.push('<line x1="' + p0[0] + '" y1="' + p0[1] + 
-      '" x2="' + p1[0] + '" y2="' + p1[1] + 
+    svg.push('<line x1="' + p0[0] + '" y1="' + p0[1] +
+      '" x2="' + p1[0] + '" y2="' + p1[1] +
       '" stroke-width="1" stroke="black" />')
   }
 })
@@ -128,6 +128,8 @@ Renders a string to a 2D cell complex
     + `options.width` determines the width of the text, overrides `lineHeight` if specified
     + `options.height` determines the height of the text, overrides `lineHeight` if specified
     + `options.orientation` determines the orientation of any output triangles/polygon curves.  Must be either `"cw"` for clockwise or `"ccw"` for counter clockwise.  Default is `"cw"`.
+    + `options.canvas` an optional canvas element
+    + `options.context` an optional canvas 2D context
 
 **Returns** The returned value depends on the type of geometry
 
