@@ -1,6 +1,6 @@
 vectorize-text
 ==============
-Convert a string of text into a vectorized geometric representation.  Works in both node.js and [browserify](http://browserify.org/).
+Convert a string of text into a vectorized geometric representation. Works in both node.js and [browserify](http://browserify.org/).
 
 # Example
 
@@ -119,14 +119,18 @@ Renders a string to a 2D cell complex
 * `string` is a string of text (single line)
 * `options` is an optional object of parameters
 
-    + `options.font` is the font to use (default: `"normal"`)
-    + `options.triangles` if set, then output a triangulation
-    + `options.polygons` if set, output a list of polygons
+    + `options.font` is the font family to use (default: `"normal"`)
+    + `options.fontStyle` if set, determines the [font-style](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style)
+    + `options.fontVariant` if set, determines the [font-variant](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant)
+    + `options.fontWeight` if set, determines the [font-weight](https://developer.mozilla.org/en/docs/Web/CSS/font-weight)
+    + `options.size` is the [font-size](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) used for the rasterization step (determines level of detail of the mesh)
     + `options.textBaseline` determines the baseline, same semantics as the canvas [textBaseline](https://developer.mozilla.org/en-US/docs/Drawing_text_using_a_canvas#Attributes) property.  Default: `"alphabetic"`
     + `options.textAlign` determines the alignment for the text, same semantics as canvas [textAlign](https://developer.mozilla.org/en-US/docs/Drawing_text_using_a_canvas#Attributes).  Default: `"start"`
     + `options.lineHeight` determines the height of a line.  Default: `1.0`
     + `options.width` determines the width of the text, overrides `lineHeight` if specified
     + `options.height` determines the height of the text, overrides `lineHeight` if specified
+    + `options.triangles` if set, then output a triangulation
+    + `options.polygons` if set, output a list of polygons
     + `options.orientation` determines the orientation of any output triangles/polygon curves.  Must be either `"cw"` for clockwise or `"ccw"` for counter clockwise.  Default is `"cw"`.
     + `options.canvas` an optional canvas element
     + `options.context` an optional canvas 2D context
@@ -145,7 +149,7 @@ Renders a string to a 2D cell complex
     + `cells` are the faces of the triangulation, encoded as triples of indices into the vertex array
     + `positions` are the positions of the vertices in the triangulation
 
-**Note** In node.js, this library requires Cairo.  For more information on how to set this up, look at the documentation for the [canvas module](https://www.npmjs.org/package/canvas).
+**Note** In node.js, this library requires Cairo. For more information on how to set this up, look at the documentation for the [canvas module](https://www.npmjs.org/package/canvas).
 
 # Credits
 (c) 2014 Mikola Lysenko. MIT License
