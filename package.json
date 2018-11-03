@@ -7,7 +7,6 @@
     "example": "example"
   },
   "dependencies": {
-    "superscript-text": "^1.0.0",
     "cdt2d": "^1.0.0",
     "clean-pslg": "^1.1.0",
     "ndarray": "^1.0.11",
