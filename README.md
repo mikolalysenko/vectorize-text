@@ -134,6 +134,11 @@ Renders a string to a 2D cell complex
     + `options.orientation` determines the orientation of any output triangles/polygon curves.  Must be either `"cw"` for clockwise or `"ccw"` for counter clockwise.  Default is `"cw"`.
     + `options.canvas` an optional canvas element
     + `options.context` an optional canvas 2D context
+    + `options.styletags.breaklines` if set, break-line tags i.e. < br > could be used in the input to enter new lines.
+    + `options.styletags.bolds` if set, parts of the input i.e. between < b > and < /b > would be presented <b>bold</b>.
+    + `options.styletags.italics` if set, parts of the input i.e. between < i > and < /i > would be presented <i>italic</i>.
+    + `options.styletags.superscripts` if set, parts of the input i.e. between < sup > and < /sup > would be presented in as superscript. Multiple superscipts are also allowded. For example Line 0<sup>Line 1<sup>Line 2</sup></sup>.
+    + `options.styletags.subscripts` if set, parts of the input i.e. between < sub > and < /sub > would be presented in as subscript. Multiple subscipts are also allowded. For example: Line 0<sub>Line 1<sub>Line 2</sub></sub>. Note: it is also possible to combine sub and superscripts: A<sub>B<sup>C</sup></sub>.
 
 **Returns** The returned value depends on the type of geometry
 
