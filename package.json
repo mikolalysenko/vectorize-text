@@ -8,17 +8,17 @@
   },
   "dependencies": {
     "cdt2d": "^1.0.0",
-    "clean-pslg": "^1.1.0",
-    "ndarray": "^1.0.11",
-    "planar-graph-to-polyline": "^1.0.0",
+    "clean-pslg": "^1.1.2",
+    "ndarray": "^1.0.19",
+    "planar-graph-to-polyline": "^1.0.5",
     "simplify-planar-graph": "^2.0.1",
-    "surface-nets": "^1.0.0",
-    "triangulate-polyline": "^1.0.0"
+    "surface-nets": "^1.0.2",
+    "triangulate-polyline": "^1.0.3"
   },
   "devDependencies": {
-    "get-pixels": "^3.1.0",
-    "ndarray-imshow": "^1.0.0",
-    "save-pixels": "^2.2.0",
+    "get-pixels": "^3.3.2",
+    "ndarray-imshow": "^1.0.1",
+    "save-pixels": "^2.3.4",
     "tape": "^3.0.3"
   },
   "scripts": {
